@@ -21,8 +21,7 @@ Esta tabla amplía las entradas anteriores. Permite reconstruir qué propuso la 
 | 10-10-2026 | OpenCode | Diseñar el inicio de un mes nuevo | Preguntar al abrir la aplicación | Pantalla completa con «No, todo igual» y «Sí, he cambiado algo» | Se dejó la pregunta antes del menú principal porque el cambio afecta al presupuesto mensual completo. |
 | 10-10-2026 | OpenCode | Definir el ranking futuro | Comparar el porcentaje de mejora mensual | La privacidad y la comparación por porcentaje | Se cambió a porcentaje del objetivo cumplido, con tope del 100 %, porque la mejora podía dividir por cero y premiar a quien tenía más margen. |
 | 17-10-2026 | OpenCode | Adaptar el proyecto a la Órbita 1 | Organizar hipótesis, referentes, encuesta, personas y MVP | La carpeta `KUBO/` y el flujo de ocho pasos | Se añadió el requisito pendiente de una persona con diversidad funcional en vez de inventar sus necesidades. |
-
-
+| 17-10-2026 | OpenCode | Ayudar a redactar el Brief | Definir paso a paso qué hay que redactar y cómo hacerlo | La estructura para redactar el Brief | Lo adapté a los datos reales de la investigación. |
 ### Cómo se justifican las decisiones
 
 - **P1** revisa el banco a diario y va «de cabeza»: de ahí salen el número semanal y la consulta en cinco segundos.
