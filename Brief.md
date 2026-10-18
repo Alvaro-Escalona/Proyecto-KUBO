@@ -72,11 +72,6 @@ Estos criterios se comprobarán mediante tareas con las personas durante las pru
 - El diseño será móvil primero, aunque habrá una versión web adaptada.
 - El Modo Pro no condiciona el MVP y no debe aumentar su alcance.
 
-### De tiempo y equipo
-
-- Si una funcionalidad no es necesaria para el recorrido principal de P1, se queda fuera.
-- Las decisiones se validarán con pruebas de usuarios y no solo por preferencias del equipo.
-
 ### De las personas
 
 - P1 utiliza un iPhone por la noche y necesita una consulta rápida.
