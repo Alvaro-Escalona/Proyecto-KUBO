@@ -80,16 +80,14 @@ Todos en la página *Componentes*, con Auto layout, variables y variantes de est
 
 ## Uso de IA
 
-He usado una herramienta de IA con navegador (OpenCode) durante toda la órbita: para leer el brief, extraer las medidas del wireframe nodo a nodo directamente del archivo de Figma, crear y verificar variables y estilos, construir y reorganizar los componentes por niveles de Atomic Design y calcular los contrastes con valores reales en lugar de estimarlos. El detalle de cada uso queda en el [CHANGELOG.md](CHANGELOG.md).
+He usado una herramienta de IA con navegador (OpenCode) durante la órbita: para que me guiase un poco paso por paso en lo que tenia que ir haciendo, para extraer las medidas del wireframe nodo a nodo directamente del archivo de Figma, verificar variables y estilos, organizar la paleta de colores para que se entendiera mejor, reorganizar los componentes por niveles de Atomic Design. El detalle de cada uso queda en el [CHANGELOG.md](CHANGELOG.md).
 
 ## Lo que ha quedado pendiente
 
-1. **Rediseño de los wireframes** con la nota de qué cambia y por qué, y el inventario de decisiones en su página.
-2. **Mockups del happy path** con Auto layout y espacios de variables, **prototipo** enlazado, **segundo ancho** y **modo oscuro** en pantalla principal y otra más.
-3. **Guía de estilo completa**: secciones de componentes, decisiones que afectan al peso, tabla de contraste en los dos modos y correspondencia niveles tipográficos ↔ etiquetas HTML.
-4. **Estilos de efecto** (elevación) y **de retícula**, y vincularlos a variables.
-5. **Descripciones y sintaxis de código** en las variables que faltan (17/20 y 13/20 en `Semánticos`).
-6. **Corregir el contraste en modo oscuro** de `on-surface-variant` sobre `surface` (1,23 : 1).
-7. **Elegir una sola librería de iconos**: el wireframe mezcla noto, streamline, emojione, iconamoon, fluent, akar, mingcute y bitcoin-icons.
-8. **CHANGELOG.md**: registrar cada uso de IA de la órbita. Está congelado por decisión y hay que abrirlo antes de entregar.
-9. **Guardar la versión «Entrega Órbita 2»** en el historial de versiones de Figma y añadir aquí el enlace del prototipo.
+1. **Mockups del happy path** con Auto layout y espacios de variables, **prototipo** enlazado, **segundo ancho** y **modo oscuro** en pantalla principal y otra más.
+2. **Guía de estilo completa**: secciones de componentes, decisiones que afectan al peso, tabla de contraste en los dos modos y correspondencia niveles tipográficos ↔ etiquetas HTML.
+3. **Estilos de efecto** (elevación) y **de retícula**, y vincularlos a variables.
+4. **Descripciones y sintaxis de código** en las variables que faltan (17/20 y 13/20 en `Semánticos`).
+5. **Corregir el contraste en modo oscuro** de `on-surface-variant` sobre `surface` (1,23 : 1).
+6. **Elegir una sola librería de iconos**: el wireframe mezcla noto, streamline, emojione, iconamoon, fluent, akar, mingcute y bitcoin-icons.
+7. **CHANGELOG.md**: registrar cada uso de IA de la órbita.
