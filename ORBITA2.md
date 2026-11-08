@@ -14,7 +14,7 @@ Resumen de la entrega de la Órbita 2. La corrección empieza por aquí: dónde 
 
 | Entregable | Página y sección del archivo |
 |---|---|
-| Inventario de decisiones | **Pendiente** (va en la página *Wireframes*) |
+| Inventario de decisiones | Página *Wireframes* → sección `Section 2`: tablas **Tipografía**, **Color** y **Espaciado, forma y tamaño** (columnas *Elemento · Decisión/función · Token propuesto*) |
 | Wireframes rediseñados con sus notas | **Pendiente**. En *Wireframes* están los de la Órbita 1 sin modificar: secciones `Aplicación` e `Inicio de sesion movil` |
 | Variables | Colecciones `Primitivos` (196 variables, sin modos) y `Semánticos` (20 variables, modos **Claro/Oscuro**) |
 | Estilos | 7 estilos de texto `KUBO / …` (panel *Estilos de texto*). **Faltan** los estilos de efecto y de retícula |
