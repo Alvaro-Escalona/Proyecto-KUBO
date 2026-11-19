@@ -1,3 +1,5 @@
+Aplicación publicada: https://alvaro-escalona.github.io/Proyecto-KUBO/
+
 # Proyecto-KUBO
 
 KUBO es una aplicación móvil de ahorro que responde a una pregunta concreta:
