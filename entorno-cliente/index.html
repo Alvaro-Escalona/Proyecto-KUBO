@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inicio · KUBO</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <header class="cabecera">
+    <h1 class="cabecera__titulo">KUBO</h1>
+    <nav class="menu" aria-label="Navegación principal">
+      <ul class="menu__lista">
+        <li><a class="menu__enlace" href="index.html" aria-current="page">Inicio</a></li>
+        <li><a class="menu__enlace" href="kubos.html">Kubos</a></li>
+        <li><a class="menu__enlace" href="registro.html">Registro</a></li>
+        <li><a class="menu__enlace" href="revision.html">Revisión</a></li>
+        <li><a class="menu__enlace" href="mi-mes.html">Mi mes</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="resumen" aria-labelledby="resumen-titulo">
+      <h2 id="resumen-titulo">Te quedan esta semana</h2>
+      <p class="resumen__cantidad" id="resumen-cantidad"></p>
+    </section>
+    <section class="kubos" aria-labelledby="kubos-titulo">
+      <div class="kubos__cabecera">
+        <h2 id="kubos-titulo">Tus kubos</h2>
+        <a class="menu__enlace" href="kubos.html">Ver todo</a>
+      </div>
+      <div class="kubos-scroll" id="kubos-portada" role="region" aria-label="Tus kubos" tabindex="0">
+        <!-- JS genera las tarjetas -->
+      </div>
+    </section>
+  </main>
+</body>
+</html>

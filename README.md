@@ -21,3 +21,22 @@ El proyecto pertenece al módulo de Interfaces de 2.º DAW. Se diseña a partir 
 | [Brief.md](Brief.md) | Enunciado del proyecto |
 
 **Archivo de Figma:** https://www.figma.com/design/t62XaGPAkY53erL4yUVV4G/Interfaz-web-del-proyecto
+
+---
+
+# Desarrollo Web en Entorno Cliente
+
+Repositorio del proyecto: https://github.com/Alvaro-Escalona/Proyecto-KUBO
+
+## Hito 1 de 5 · Preparación, menú, listado y detalle
+
+El código de esta asignatura está en `entorno-cliente/`: `index.html`, `css/`, `js/`
+con los módulos `datos.js`, `ui.js` y `main.js`, y ESLint configurado.
+
+### Backlog
+
+*(se completará en la Parte 1)*
+
+### Mapa de pantallas
+
+*(se completará en la Parte 1)*
