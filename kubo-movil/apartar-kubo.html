@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Apartar Kubo con fecha · KUBO</title>
+  <meta name="description" content="KUBO: una forma más tranquila de organizar tu dinero.">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <a class="u-skip-link" href="#main">Saltar al contenido</a>
+  <header class="site-header">
+    <a class="site-header__brand" href="index.html">CREAR KUBO</a>
+  </header>
+  <nav class="main-nav" aria-label="Principal">
+    <ul class="main-nav__list" role="list">
+      <li><a class="main-nav__link" href="index.html" aria-current="page">Inicio</a></li>
+      <li><a class="main-nav__link" href="kubos.html">Kubos</a></li>
+      <li><a class="main-nav__link" href="registrar-gasto.html">Registro</a></li>
+      <li><a class="main-nav__link" href="revision.html">Revisión</a></li>
+      <li><a class="main-nav__link" href="mi-mes.html">Mi mes</a></li>
+    </ul>
+  </nav>
+  <main id="main" class="o-container o-stack">
+    <h1>Apartar Kubo con fecha</h1>
+    <form class="o-stack" action="#" method="post">
+      <div class="field"><label class="field__label" for="para-que">¿PARA QUÉ ES?</label><input class="input" id="para-que" name="para-que" type="text" placeholder="Ej. Regalo María"></div>
+      <div class="field"><label class="field__label" for="necesitas">¿CUÁNTO NECESITAS?</label><input class="input" id="necesitas" name="necesitas" type="text" inputmode="decimal" value="50 €"></div>
+      <fieldset class="o-cluster"><legend class="field__label">ELIGE UN ICONO</legend></fieldset>
+      <div class="field"><label class="field__label" for="cuando">¿PARA CUANDO?</label><input class="input" id="cuando" name="cuando" type="date" value="2026-11-20"></div>
+      <div class="field"><label class="field__label" for="origen">¿DE DÓNDE LO APARTAS?</label><input class="input" id="origen" name="origen" type="text" value="Dinero disponible · 100 €"></div>
+      <p class="text text--caption">Este importe quedará reservado hasta la fecha elegida</p>
+      <button class="button" type="submit">Apartar Kubo</button>
+      <button class="button button--secondary" type="button">Cancelar</button>
+    </form>
+  </main>
+</body>
+</html>

@@ -1,0 +1,25 @@
+// Semánticos: Claro / Oscuro con light-dark()
+:root {
+  color-scheme: light dark;
+
+  --color-background: light-dark(#fafafa, #071027); /* Token semántico Claro/Oscuro. Fondo general de la aplicación (alias de Color/gray/50 en Claro y Color/navy/900 en Oscuro). */
+  --color-border: light-dark(#d2d2d2, #899cc6); /* Token semántico Claro/Oscuro. Bordes de tarjetas, separadores y contornos de campos. */
+  --color-error: light-dark(#4b0101, #4b0101); /* Token semántico Claro/Oscuro. Fondo de errores y validaciones de formulario. */
+  --color-on-background: light-dark(#1a1a1a, #ffffff); /* Token semántico Claro/Oscuro. Texto principal sobre el fondo general (gray/900 en Claro, gray/0 en Oscuro). */
+  --color-on-error: light-dark(#ff1c1c, #ff1c1c); /* Token semántico Claro/Oscuro. Texto e iconos sobre el fondo de error. */
+  --color-on-primary: light-dark(#ffffff, #ffffff); /* Token semántico Claro/Oscuro. Texto e iconos sobre las superficies de marca. */
+  --color-on-secondary: light-dark(#071027, #071027); /* Token semántico Claro/Oscuro. Texto e iconos sobre el color de acento. */
+  --color-on-success: light-dark(#00ff08, #00ff08); /* Token semántico Claro/Oscuro. Texto e iconos sobre el fondo de confirmación. */
+  --color-on-surface: light-dark(#1a1a1a, #ffffff); /* Token semántico Claro/Oscuro. Textos e iconos dentro de las tarjetas. */
+  --color-on-surface-accent: light-dark(#0f1b4d, #ffffff); /* Token semántico Claro/Oscuro. Texto de ahorro y atributos dentro de tarjetas. */
+  --color-on-surface-variant: light-dark(#5c5c5c, #e2e7f7); /* Token semántico Claro/Oscuro. Texto secundario, descripciones y metadatos sobre superficies. */
+  --color-on-warning: light-dark(#fd9617, #fd9617); /* Token semántico Claro/Oscuro. Texto e iconos sobre el fondo de advertencia. */
+  --color-primary: light-dark(#0f1b4d, #0f1b4d); /* Token semántico Claro/Oscuro. Color de marca: cabecera, tarjeta de saldo y navegación Seleccionada. */
+  --color-secondary: light-dark(#f2b325, #f2b325); /* Token semántico Claro/Oscuro. Color de acento: CTA principal, importes y pastillas activas. */
+  --color-success: light-dark(#3f9952, #3f9952); /* Token semántico Claro/Oscuro. Fondo de confirmación y de estado de ritmo favorable. */
+  --color-surface: light-dark(#ffffff, #0f1b4d); /* Token semántico Claro/Oscuro. Fondo de tarjetas y superficies elevadas (gray/0 en Claro, navy/800 en Oscuro). */
+  --color-surface-variant: light-dark(#ededed, #0f1b4d); /* Token semántico Claro/Oscuro. Fondo de superficies secundarias: chips, campos y bloques de apoyo. */
+  --color-track: light-dark(#b8b8b8, #b8b8b8); /* Token semántico Claro/Oscuro. Pista de las barras de progreso de los Kubos. */
+  --color-valor-destacado: light-dark(#0f1b4d, #f2b325); /* Token semántico Claro/Oscuro. Cifra destacada dentro de las tarjetas (navy en Claro, oro en Oscuro). */
+  --color-warning: light-dark(#9a5f23, #9a5f23); /* Token semántico Claro/Oscuro. Fondo de avisos de advertencia no bloqueantes. */
+}

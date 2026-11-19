@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Crear cuenta · KUBO</title>
+  <meta name="description" content="KUBO: una forma más tranquila de organizar tu dinero.">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <a class="u-skip-link" href="#main">Saltar al contenido</a>
+  <header class="site-header">
+    <a class="site-header__brand" href="index.html">Registrate</a>
+  </header>
+  
+  <main id="main" class="o-container o-stack">
+    <h1>Registrarse</h1>
+    <form class="o-stack" action="#" method="post">
+      <div class="field"><label class="field__label" for="email2">Correo electronico</label><input class="input" id="email2" name="email" type="email" autocomplete="email"></div>
+      <div class="field"><label class="field__label" for="pass2">Contraseña</label><input class="input" id="pass2" name="password" type="password" autocomplete="new-password"></div>
+      <div class="field"><label class="field__label" for="pass3">Confirmar contraseña</label><input class="input" id="pass3" name="password-confirm" type="password" autocomplete="new-password"></div>
+      <fieldset class="o-stack">
+        <legend class="u-visually-hidden">Preferencias</legend>
+        <label class="choice"><input class="choice__control" type="checkbox" name="terminos" required> Aceptar terminos y condiciones</label>
+        <label class="choice"><input class="choice__control" type="checkbox" name="notificaciones"> Aceptar recibir notificaciones</label>
+      </fieldset>
+      <button class="button" type="submit">Registarte</button>
+      <p><a class="link" href="iniciar-sesion.html">¿Ya tienes cuenta? Iniciar sesión</a></p>
+    </form>
+  </main>
+</body>
+</html>

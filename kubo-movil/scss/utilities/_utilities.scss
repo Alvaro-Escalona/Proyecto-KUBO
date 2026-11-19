@@ -1,0 +1,3 @@
+@use "../tools" as *;
+.u-visually-hidden { @include visually-hidden; }
+.u-skip-link { @include visually-hidden; &:focus { position: static; inline-size: auto; block-size: auto; clip-path: none; } }

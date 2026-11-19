@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>KUBOS · KUBO</title>
+  <meta name="description" content="KUBO: una forma más tranquila de organizar tu dinero.">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <a class="u-skip-link" href="#main">Saltar al contenido</a>
+  <header class="site-header">
+    <a class="site-header__brand" href="index.html">KUBOS</a>
+  </header>
+  <nav class="main-nav" aria-label="Principal">
+    <ul class="main-nav__list" role="list">
+      <li><a class="main-nav__link" href="index.html" aria-current="page">Inicio</a></li>
+      <li><a class="main-nav__link" href="kubos.html">Kubos</a></li>
+      <li><a class="main-nav__link" href="registrar-gasto.html">Registro</a></li>
+      <li><a class="main-nav__link" href="revision.html">Revisión</a></li>
+      <li><a class="main-nav__link" href="mi-mes.html">Mi mes</a></li>
+    </ul>
+  </nav>
+  <main id="main" class="o-container o-stack">
+    <h1>Kubos</h1>
+    <section class="section" aria-labelledby="total-title">
+      <h2 id="total-title" class="text text--heading-2">TE QUEDAN EN TOTAL</h2>
+      <p class="text text--display">175 €</p>
+      <p class="text text--caption">de 500 € · 325 € gastados este mes</p>
+    </section>
+    <section class="section" aria-labelledby="flexibles-title">
+      <h2 id="flexibles-title" class="text text--heading-2">TUS KUBOS</h2>
+      <a class="button button--secondary" href="crear-kubo.html">+ Nuevo Kubo</a>
+      <ul class="o-grid" role="list">
+        <li><article class="card card--kubo"><h3 class="card__title">Comida</h3><p class="card__meta">Mensaje del ritmo semanal</p><p class="card__amount">150 € de 200 €</p></article></li>
+        <li><article class="card card--kubo"><h3 class="card__title">Ocio</h3><p class="card__meta">Mensaje del ritmo semanal</p><p class="card__amount">150 € de 200 €</p></article></li>
+      </ul>
+    </section>
+    <section class="section" aria-labelledby="fecha-title">
+      <h2 id="fecha-title" class="text text--heading-2">TUS KUBOS</h2>
+      <a class="button button--secondary" href="apartar-kubo.html">+ Apartar Kubo</a>
+      <ul class="o-stack" role="list">
+        <li><article class="card card--kubo"><h3 class="card__title">Regalo María · 50 €</h3><p class="card__meta">dia 18</p></article></li>
+        <li><article class="card card--kubo"><h3 class="card__title">Veterinario · 30 €</h3><p class="card__meta">dia 18</p></article></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,9 @@
+body {
+  font-family: var(--font-family-interface), system-ui, sans-serif;
+  color: var(--color-on-background);
+  background-color: var(--color-background);
+  line-height: 1.5;
+}
+h1, h2, h3 { text-wrap: balance; margin-block-start: 0; }
+p { text-wrap: pretty; }
+a { color: var(--color-secondary); }

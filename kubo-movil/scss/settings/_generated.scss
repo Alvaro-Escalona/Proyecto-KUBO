@@ -1,0 +1,10 @@
+// Genera las custom properties de los mapas de tokens
+@use "sass:map";
+@use "tokens-primitivos" as p;
+
+:root {
+  @each $name, $value in p.$colors { #{--color-#{$name}}: #{$value}; }
+  @each $name, $value in p.$spaces { #{--space-#{$name}}: #{$value}; }
+  @each $name, $value in p.$radii { #{--radius-#{$name}}: #{$value}; }
+  @each $name, $value in p.$fonts { #{--font-#{$name}}: #{$value}; }
+}

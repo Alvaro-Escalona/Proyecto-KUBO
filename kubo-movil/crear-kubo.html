@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Crear Kubo · KUBO</title>
+  <meta name="description" content="KUBO: una forma más tranquila de organizar tu dinero.">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <a class="u-skip-link" href="#main">Saltar al contenido</a>
+  <header class="site-header">
+    <a class="site-header__brand" href="index.html">CREAR KUBO</a>
+  </header>
+  <nav class="main-nav" aria-label="Principal">
+    <ul class="main-nav__list" role="list">
+      <li><a class="main-nav__link" href="index.html" aria-current="page">Inicio</a></li>
+      <li><a class="main-nav__link" href="kubos.html">Kubos</a></li>
+      <li><a class="main-nav__link" href="registrar-gasto.html">Registro</a></li>
+      <li><a class="main-nav__link" href="revision.html">Revisión</a></li>
+      <li><a class="main-nav__link" href="mi-mes.html">Mi mes</a></li>
+    </ul>
+  </nav>
+  <main id="main" class="o-container o-stack">
+    <h1>Crear Kubo</h1>
+    <p><a class="link" href="kubos.html">&lt; Volver</a></p>
+    <form class="o-stack" action="#" method="post">
+      <div class="field"><label class="field__label" for="nombre-kubo">¿CÓMO SE LLAMA EL NUEVO KUBO?</label><input class="input" id="nombre-kubo" name="nombre-kubo" type="text" value="Mascotas"></div>
+      <fieldset class="o-cluster"><legend class="field__label">ELIGE UNA CATEGORÍA</legend>
+        <label class="choice"><input class="choice__control" type="radio" name="categoria" value="mascotas" checked> Mascotas</label>
+        <label class="choice"><input class="choice__control" type="radio" name="categoria" value="ropa"> Ropa</label>
+        <label class="choice"><input class="choice__control" type="radio" name="categoria" value="gimnasio"> Gimnasio</label>
+        <label class="choice"><input class="choice__control" type="radio" name="categoria" value="suscripciones"> Suscripciones</label>
+      </fieldset>
+      <div class="field"><label class="field__label" for="tope">¿CUÁNTO LE PONES DE TOPE?</label><input class="input" id="tope" name="tope" type="text" value="80 €"></div>
+      <p class="text text--caption">Con 80 € al mes te quedan 20 € por semana para este Kubo.</p>
+      <button class="button" type="submit">Crear Kubo · Mascotas</button>
+      <button class="button button--secondary" type="button">Cancelar</button>
+    </form>
+  </main>
+</body>
+</html>

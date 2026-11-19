@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Principal · KUBO</title>
+  <meta name="description" content="KUBO: una forma más tranquila de organizar tu dinero.">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <a class="u-skip-link" href="#main">Saltar al contenido</a>
+  <header class="site-header">
+    <a class="site-header__brand" href="index.html">Buenas tardes, nombre 👋</a>
+  </header>
+  <nav class="main-nav" aria-label="Principal">
+    <ul class="main-nav__list" role="list">
+      <li><a class="main-nav__link" href="index.html" aria-current="page">Inicio</a></li>
+      <li><a class="main-nav__link" href="kubos.html">Kubos</a></li>
+      <li><a class="main-nav__link" href="registrar-gasto.html">Registro</a></li>
+      <li><a class="main-nav__link" href="revision.html">Revisión</a></li>
+      <li><a class="main-nav__link" href="mi-mes.html">Mi mes</a></li>
+    </ul>
+  </nav>
+  <main id="main" class="o-container o-stack">
+    <h1>Principal</h1>
+    <section class="section section--saldo" aria-labelledby="saldo-title">
+      <h2 id="saldo-title" class="text text--heading-2">TE QUEDAN ESTA SEMANA</h2>
+      <p class="text text--display">92 €</p>
+      <p class="text text--caption">del lunes X al domingo XX · <time datetime="2026-11-16">Semana 3/4</time></p>
+      <p class="text text--caption">Mensaje del ritmo semanal general</p>
+    </section>
+    <section class="section" aria-labelledby="kubos-title">
+      <h2 id="kubos-title" class="text text--heading-2">TUS KUBOS</h2>
+      <a class="link" href="kubos.html">Ver todo</a>
+      <ul class="o-grid" role="list">
+        <li><article class="card card--kubo"><h3 class="card__title">Comida</h3><p class="card__meta">Mensaje del ritmo semanal</p><p class="card__amount">150 € de 200 €</p></article></li>
+        <li><article class="card card--kubo"><h3 class="card__title">Ocio</h3><p class="card__meta">Mensaje del ritmo semanal</p><p class="card__amount">150 € de 200 €</p></article></li>
+        <li><article class="card card--kubo"><h3 class="card__title">Transporte</h3><p class="card__meta">Mensaje del ritmo semanal</p><p class="card__amount">150 € de 200 €</p></article></li>
+      </ul>
+    </section>
+    <section class="section" aria-labelledby="ahorro-title">
+      <h2 id="ahorro-title" class="text text--heading-2">AHORRO</h2>
+      <p class="text text--caption">COLCHÓN · 60 €</p>
+      <p class="text text--caption">AHORRO DEL MES · 150 € de 200 € · 75 %</p>
+    </section>
+    <p><a class="button" href="registrar-gasto.html">Registrar gasto</a></p>
+  </main>
+</body>
+</html>

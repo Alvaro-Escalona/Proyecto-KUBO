@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Registrar gasto · KUBO</title>
+  <meta name="description" content="KUBO: una forma más tranquila de organizar tu dinero.">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <a class="u-skip-link" href="#main">Saltar al contenido</a>
+  <header class="site-header">
+    <a class="site-header__brand" href="index.html">Registrar gasto</a>
+  </header>
+  <nav class="main-nav" aria-label="Principal">
+    <ul class="main-nav__list" role="list">
+      <li><a class="main-nav__link" href="index.html" aria-current="page">Inicio</a></li>
+      <li><a class="main-nav__link" href="kubos.html">Kubos</a></li>
+      <li><a class="main-nav__link" href="registrar-gasto.html">Registro</a></li>
+      <li><a class="main-nav__link" href="revision.html">Revisión</a></li>
+      <li><a class="main-nav__link" href="mi-mes.html">Mi mes</a></li>
+    </ul>
+  </nav>
+  <main id="main" class="o-container o-stack">
+    <h1>Registro rápido</h1>
+    <section class="section" aria-labelledby="kubo-title">
+      <h2 id="kubo-title" class="text text--heading-2">¿En que Kubo va?</h2>
+      <fieldset class="o-cluster">
+        <legend class="u-visually-hidden">Kubo</legend>
+        <label class="choice"><input class="choice__control" type="radio" name="kubo" value="comida"> Comida · 75 € libres</label>
+        <label class="choice"><input class="choice__control" type="radio" name="kubo" value="ocio"> Ocio · 150 € libres</label>
+        <label class="choice"><input class="choice__control" type="radio" name="kubo" value="transporte"> Transporte · 55 € libres</label>
+      </fieldset>
+    </section>
+    <form class="o-stack" action="#" method="post">
+      <div class="field"><label class="field__label" for="importe">Importe del gasto</label><input class="input" id="importe" name="importe" type="text" inputmode="decimal" value="25,95 €"></div>
+      <div class="field"><label class="field__label" for="concepto">Concepto (opcional)</label><input class="input" id="concepto" name="concepto" type="text" placeholder="Kubo seleccionado · concepto"></div>
+      <button class="button" type="submit">Guardar en Kubo</button>
+    </form>
+  </main>
+</body>
+</html>

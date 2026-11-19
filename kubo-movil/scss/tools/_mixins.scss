@@ -1,0 +1,20 @@
+@use "sass:map";
+@use "../settings/breakpoints" as bp;
+
+@mixin from($name) {
+  @media (width >= map.get(bp.$breakpoints, $name)) { @content; }
+}
+
+@mixin focus-ring {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
