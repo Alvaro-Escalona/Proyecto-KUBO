@@ -4,36 +4,162 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Inicio · KUBO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;700;800&display=swap">
   <link rel="stylesheet" href="css/estilos.css">
   <script type="module" src="js/main.js"></script>
 </head>
 <body>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-inicio-linea" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4.2 10.6 12 4.4l7.8 6.2v8.4a1.6 1.6 0 0 1-1.6 1.6H5.8a1.6 1.6 0 0 1-1.6-1.6z"/>
+      <path d="M9.8 20.6v-3.2a2.2 2.2 0 0 1 4.4 0v3.2"/>
+    </symbol>
+    <symbol id="i-inicio-lleno" viewBox="0 0 24 24">
+      <path fill="currentColor" stroke="none" fill-rule="evenodd" d="M4.2 10.6 12 4.4l7.8 6.2v8.4a1.6 1.6 0 0 1-1.6 1.6H5.8a1.6 1.6 0 0 1-1.6-1.6zM9.8 20.6v-3.2a2.2 2.2 0 0 1 4.4 0v3.2z"/>
+    </symbol>
+    <symbol id="i-kubos-linea" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <g transform="rotate(-28 11 12)">
+        <rect x="5" y="6.5" width="12" height="11.5" rx="3.2"/>
+        <path d="M5.8 13.4 11.6 7"/>
+      </g>
+      <circle cx="17.6" cy="16.8" r="2.8"/>
+    </symbol>
+    <symbol id="i-kubos-lleno" viewBox="0 0 24 24">
+      <g transform="rotate(-28 11 12)">
+        <rect x="5" y="6.5" width="12" height="11.5" rx="3.2" fill="currentColor" stroke="none"/>
+        <path d="M5.8 13.4 11.6 7" fill="none" stroke="var(--color-surface)" stroke-width="1.1"/>
+      </g>
+      <circle cx="17.6" cy="16.8" r="2.8" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-registro" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M12 5.5v13M5.5 12h13"/>
+    </symbol>
+    <symbol id="i-revision-linea" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+      <rect x="4" y="4" width="7" height="7" rx="1.6"/>
+      <rect x="13" y="4" width="7" height="7" rx="1.6"/>
+      <rect x="4" y="13" width="7" height="7" rx="1.6"/>
+      <rect x="13" y="13" width="7" height="7" rx="1.6"/>
+    </symbol>
+    <symbol id="i-revision-lleno" viewBox="0 0 24 24">
+      <rect x="4" y="4" width="7" height="7" rx="1.6" fill="currentColor" stroke="none"/>
+      <rect x="13" y="4" width="7" height="7" rx="1.6" fill="currentColor" stroke="none"/>
+      <rect x="4" y="13" width="7" height="7" rx="1.6" fill="currentColor" stroke="none"/>
+      <rect x="13" y="13" width="7" height="7" rx="1.6" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-mimes-linea" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12.1 3.6A8.5 8.5 0 1 0 18.4 6.1"/>
+      <path d="M12.8 11.4 18.4 6.1A8.5 8.5 0 0 0 12.1 3.6Z"/>
+    </symbol>
+    <symbol id="i-mimes-lleno" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8.5" fill="currentColor" stroke="none"/>
+      <path d="M12.8 11.4 18.4 6.1A8.5 8.5 0 0 0 12.1 3.6Z" fill="var(--color-surface)" stroke="none"/>
+    </symbol>
+  </svg>
+
   <header class="cabecera">
-    <h1 class="cabecera__titulo">KUBO</h1>
-    <nav class="menu" aria-label="Navegación principal">
-      <ul class="menu__lista">
-        <li><a class="menu__enlace" href="index.html" aria-current="page">Inicio</a></li>
-        <li><a class="menu__enlace" href="kubos.html">Kubos</a></li>
-        <li><a class="menu__enlace" href="registro.html">Registro</a></li>
-        <li><a class="menu__enlace" href="revision.html">Revisión</a></li>
-        <li><a class="menu__enlace" href="mi-mes.html">Mi mes</a></li>
-      </ul>
-    </nav>
+    <button class="perfil" type="button" aria-label="Abrir menú de perfil" title="Disponible en un próximo hito">
+      <img class="perfil__foto" src="img/perfil.svg" alt="" width="36" height="36">
+    </button>
+    <div class="cabecera__datos">
+      <span class="cabecera__titulo">Semana 3/4</span>
+      <span class="cabecera__dato">16–22 nov</span>
+    </div>
   </header>
+
   <main>
     <section class="resumen" aria-labelledby="resumen-titulo">
-      <h2 id="resumen-titulo">Te quedan esta semana</h2>
-      <p class="resumen__cantidad" id="resumen-cantidad"></p>
+      <h2 class="resumen__titulo" id="resumen-titulo">Te quedan esta semana</h2>
+      <p class="resumen__cantidad" id="resumen-cantidad">92 €</p>
+      <p class="resumen__detalle" id="resumen-detalle">del lunes 16 al domingo 22</p>
+      <p class="resumen__semana" id="resumen-semana">Semana 3/4</p>
     </section>
-    <section class="kubos" aria-labelledby="kubos-titulo">
-      <div class="kubos__cabecera">
-        <h2 id="kubos-titulo">Tus kubos</h2>
-        <a class="menu__enlace" href="kubos.html">Ver todo</a>
+
+    <section aria-labelledby="kubos-titulo">
+      <div class="seccion__cabecera">
+        <h2 class="seccion__titulo" id="kubos-titulo">Tus kubos</h2>
+        <a class="accion" href="kubos.html">Ver todo</a>
       </div>
       <div class="kubos-scroll" id="kubos-portada" role="region" aria-label="Tus kubos" tabindex="0">
-        <!-- JS genera las tarjetas -->
+        <!-- El listado se genera en js/main.js a partir de js/datos.js -->
       </div>
     </section>
+
+    <section class="ahorros" aria-label="Ahorro">
+      <div class="ahorros__lista">
+        <div class="ahorro ahorro--colchon">
+          <p class="ahorro__titulo">Colchón</p>
+          <p class="ahorro__importe" id="ahorro-colchon">60 €</p>
+          <p class="ahorro__meta">Mensaje del ritmo mensual</p>
+        </div>
+        <div class="ahorro">
+          <p class="ahorro__titulo">Ahorro del mes</p>
+          <p class="ahorro__importe" id="ahorro-mes">150 €</p>
+          <div class="barra" role="progressbar" aria-label="Ahorro del mes"
+               aria-valuemin="0" aria-valuemax="100" aria-valuenow="75">
+            <span class="barra__relleno" style="width: 75%"></span>
+          </div>
+          <p class="ahorro__meta" id="ahorro-mes-meta">de 200 € · 75%</p>
+        </div>
+      </div>
+    </section>
+
+    <a class="boton" href="registro.html">
+      <svg class="boton__icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+        <path d="M12 5.5v13M5.5 12h13"/>
+      </svg>
+      Registrar gasto
+    </a>
   </main>
+
+  <nav class="barra-nav" aria-label="Navegación principal">
+    <ul class="barra-nav__lista">
+      <li>
+        <a class="barra-nav__enlace" href="index.html" aria-current="page">
+          <svg class="barra-nav__icono" aria-hidden="true" focusable="false">
+            <use class="icono-linea" href="#i-inicio-linea"></use>
+            <use class="icono-lleno" href="#i-inicio-lleno"></use>
+          </svg>
+          <span>Inicio</span>
+        </a>
+      </li>
+      <li>
+        <a class="barra-nav__enlace" href="kubos.html">
+          <svg class="barra-nav__icono" aria-hidden="true" focusable="false">
+            <use class="icono-linea" href="#i-kubos-linea"></use>
+            <use class="icono-lleno" href="#i-kubos-lleno"></use>
+          </svg>
+          <span>Kubos</span>
+        </a>
+      </li>
+      <li>
+        <a class="barra-nav__enlace" href="registro.html">
+          <svg class="barra-nav__icono" aria-hidden="true" focusable="false">
+            <use href="#i-registro"></use>
+          </svg>
+          <span>Registro</span>
+        </a>
+      </li>
+      <li>
+        <a class="barra-nav__enlace" href="revision.html">
+          <svg class="barra-nav__icono" aria-hidden="true" focusable="false">
+            <use class="icono-linea" href="#i-revision-linea"></use>
+            <use class="icono-lleno" href="#i-revision-lleno"></use>
+          </svg>
+          <span>Revisión</span>
+        </a>
+      </li>
+      <li>
+        <a class="barra-nav__enlace" href="mi-mes.html">
+          <svg class="barra-nav__icono" aria-hidden="true" focusable="false">
+            <use class="icono-linea" href="#i-mimes-linea"></use>
+            <use class="icono-lleno" href="#i-mimes-lleno"></use>
+          </svg>
+          <span>Mi mes</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </body>
 </html>

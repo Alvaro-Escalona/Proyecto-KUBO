@@ -1,87 +1,570 @@
+/* ==========================================================================
+   KUBO · Entorno Cliente (Hito 1)
+   Estilos calcados de los mockups móviles de Figma:
+   navy #0f1b4d, oro #f2b325, tarjetas blancas con borde y barra inferior.
+   ========================================================================== */
+
 :root {
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  color: #1b1b1f;
-  background: #f7f7f8;
+  color-scheme: light;
+
+  /* Marca */
+  --color-primary: #0f1b4d;
+  --color-secondary: #f2b325;
+  --color-background: light-dark(#fafafa, #071027);
+  --color-surface: light-dark(#ffffff, #0f1b4d);
+  --color-surface-variant: light-dark(#ededed, #16245a);
+  --color-border: light-dark(#d2d2d2, #33416e);
+  --color-on-primary: #ffffff;
+  --color-on-secondary: #071027;
+  --color-on-surface: light-dark(#1a1a1a, #ffffff);
+  --color-on-surface-variant: light-dark(#5c5c5c, #b9c3e0);
+  --color-track: light-dark(#b8b8b8, #33416e);
+  --color-exito: light-dark(#3f9952, #7ed957);
+  --color-linea: light-dark(#1a1a1a, #ffffff);
+
+  /* Tipografía (Figma: familia serif de interfaz) */
+  --font-serif: "Abhaya Libre", "Georgia", "Times New Roman", serif;
+
+  /* Radios */
+  --radius-hero: 1.75rem;
+  --radius-card: 1.25rem;
+  --radius-pill: 999px;
+  --radius-button: 2.125rem;
+
+  /* Medidas */
+  --ancho-app: 25.75rem; /* 412 px, ancho de los mockups */
+  --alto-nav: 3.75rem; /* 60 px + 1 px de borde = 62 px */
+  --ancho-icono: 1.5rem;
 }
 
-* {
+/* --------------------------------------------------------------------------
+   Base
+   -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
+html {
+  background: light-dark(#e8e8ea, #04070f);
+}
+
 body {
+  max-inline-size: var(--ancho-app);
+  min-block-size: 100dvh;
+  margin-inline: auto;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-on-surface);
+  background: var(--color-background);
+  box-shadow: 0 0 2rem light-dark(rgb(0 0 0 / 12%), rgb(0 0 0 / 60%));
+}
+
+h1,
+h2,
+h3,
+p {
   margin: 0;
 }
 
+:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+.sprite {
+  position: absolute;
+  inline-size: 0;
+  block-size: 0;
+  overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Cabecera: foto de perfil a la izquierda, página y dato a la derecha
+   -------------------------------------------------------------------------- */
+
 .cabecera {
-  padding: 1rem;
-  background: #fff;
-  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-block-size: 3.125rem;
+  padding: 0.4375rem 0.75rem;
+  color: var(--color-on-primary);
+  background: var(--color-primary);
+}
+
+.perfil {
+  flex: none;
+  inline-size: 2.25rem;
+  block-size: 2.25rem;
+  padding: 0;
+  overflow: hidden;
+  background: none;
+  border: 2px solid var(--color-secondary);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.perfil__foto {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.cabecera__datos {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0 0.625rem;
+  margin-inline-start: auto;
+  text-align: right;
 }
 
 .cabecera__titulo {
-  margin: 0 0 0.75rem;
-  font-size: 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.menu__lista {
+.cabecera__dato {
+  font-size: 0.875rem;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+.cabecera__dato::before {
+  content: "\2022";
+  margin-inline-end: 0.625rem;
+  font-size: 0.75rem;
+  vertical-align: 0.0625rem;
+}
+
+/* --------------------------------------------------------------------------
+   Contenido
+   -------------------------------------------------------------------------- */
+
+main {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1rem 1rem calc(var(--alto-nav) + 1.5rem);
+}
+
+/* Cabecera de sección: título a la izquierda, acción a la derecha */
+.seccion__cabecera {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-block-end: 0.75rem;
+}
+
+.seccion__titulo {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.accion {
+  padding: 0;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--color-on-surface);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.accion:hover {
+  text-decoration: underline;
+}
+
+/* Tarjeta de saldo: semanal en Inicio, mensual en Kubos */
+.resumen {
+  padding: 1rem 1.75rem 0.625rem;
+  color: var(--color-on-primary);
+  background: var(--color-primary);
+  border-radius: var(--radius-hero);
+}
+
+.resumen__titulo {
+  font-size: 1.6875rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.resumen__cantidad {
+  margin-block-start: 0.25rem;
+  font-size: 7.375rem;
+  font-weight: 800;
+  line-height: 0.9;
+  color: var(--color-secondary);
+}
+
+.resumen__detalle {
+  margin-block-start: 0.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.2;
+  opacity: 0.85;
+}
+
+.resumen__semana {
+  display: inline-block;
+  margin-block-start: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-on-secondary);
+  background: linear-gradient(90deg, #8ee06a, #3f9952);
+  border-radius: var(--radius-pill);
+}
+
+/* Caja de kubos con scroll interno (Inicio) */
+.kubos-scroll {
+  display: grid;
+  gap: 0.75rem;
+  max-block-size: 15rem;
+  padding-inline-end: 0.25rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* Tarjeta de kubo */
+.kubo {
+  display: grid;
+  gap: 0.625rem;
+  padding: 0.875rem 1rem 0.625rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+}
+
+.kubo__fila {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+}
+
+.kubo__icono {
+  flex: none;
+  margin-block-start: 0.125rem;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.kubo__texto {
+  display: grid;
+  min-inline-size: 0;
+}
+
+.kubo__nombre {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.kubo__meta {
+  margin-block-start: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: var(--color-on-surface-variant);
+}
+
+.kubo__importe {
+  margin-inline-start: auto;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.kubo__cantidad {
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.kubo__objetivo {
+  font-size: 0.75rem;
+  color: var(--color-on-surface-variant);
+}
+
+.kubo__dia {
+  margin-inline-start: auto;
+  font-size: 0.75rem;
+  color: var(--color-on-surface-variant);
+  white-space: nowrap;
+}
+
+/* Barra de progreso (gris, como en Figma) */
+.barra {
+  block-size: 0.5rem;
+  overflow: hidden;
+  background: var(--color-track);
+  border-radius: var(--radius-pill);
+}
+
+.barra__relleno {
+  display: block;
+  block-size: 100%;
+  background: var(--color-track);
+  border-radius: inherit;
+}
+
+/* Ahorro: colchón y mes, uno al lado del otro */
+.ahorros__lista {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.ahorro {
+  display: grid;
+  align-content: start;
+  gap: 0.25rem;
+  padding: 0.875rem 1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+}
+
+.ahorro__titulo {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ahorro__importe {
+  margin-block-start: 0.25rem;
+  font-size: 2.375rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.ahorro--colchon .ahorro__importe {
+  color: var(--color-exito);
+}
+
+.ahorro__meta {
+  margin-block-start: 0.375rem;
+  font-size: 0.875rem;
+  color: var(--color-on-surface-variant);
+}
+
+/* Botón principal dorado */
+.boton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 1.125rem 1rem;
+  font-size: 2.0625rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-on-secondary);
+  background: var(--color-secondary);
+  border-radius: var(--radius-button);
+}
+
+.boton__icono {
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Barra de navegación inferior
+   -------------------------------------------------------------------------- */
+
+.barra-nav {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 2;
+  max-inline-size: var(--ancho-app);
+  margin-inline: auto;
+  padding-inline: 0.5rem;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-linea);
+}
+
+.barra-nav__lista {
+  display: flex;
+  align-items: stretch;
+  block-size: var(--alto-nav);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.menu__enlace {
-  color: inherit;
+.barra-nav__lista > li {
+  display: grid;
+  flex: 1 1 0;
+  min-inline-size: 0;
+  place-items: center;
+}
+
+.barra-nav__enlace {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  font-size: 0.8125rem;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-on-surface);
+  border-radius: 0.875rem;
+}
+
+.barra-nav__enlace[aria-current] {
+  font-weight: 700;
+}
+
+.barra-nav__icono {
+  inline-size: var(--ancho-icono);
+  block-size: var(--ancho-icono);
+}
+
+.barra-nav__icono .icono-lleno {
+  display: none;
+}
+
+.barra-nav__enlace[aria-current] .icono-linea {
+  display: none;
+}
+
+.barra-nav__enlace[aria-current] .icono-lleno {
+  display: inline;
+}
+
+/* «Registro» con el cuadrado amarillo que asoma por encima de la barra */
+.barra-nav__enlace--registro {
+  position: relative;
+  justify-self: stretch;
+  align-content: center;
+  block-size: 3.8125rem;
+  padding: 0.5rem;
+  font-weight: 700;
+  transform: translateY(-0.875rem);
+}
+
+.barra-nav__enlace--registro::before {
+  content: "";
+  position: absolute;
+  inset: 0 -0.25rem;
+  z-index: -1;
+  background: var(--color-secondary);
+  border-radius: 0.875rem;
+}
+
+/* --------------------------------------------------------------------------
+   Detalle del kubo (kubo.html)
+   -------------------------------------------------------------------------- */
+
+.volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--color-on-surface-variant);
   text-decoration: none;
 }
 
-.menu__enlace[aria-current="page"] {
-  font-weight: 700;
+.volver:hover {
   text-decoration: underline;
 }
 
-main {
-  padding: 1rem;
-}
-
-h2 {
-  font-size: 1rem;
-}
-
-.resumen__cantidad {
-  margin: 0.25rem 0 1rem;
-  font-size: 2rem;
-}
-
-.kubos__cabecera {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.kubos-scroll {
+.ficha {
   display: grid;
   gap: 0.75rem;
-  max-height: 16rem;
-  padding: 0.25rem;
-  overflow-y: auto;
-  overscroll-behavior: contain;
+  padding: 1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
 }
 
-.kubo {
-  padding: 0.75rem;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 0.5rem;
+.grupo__cabecera {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-block: 1.25rem 0.75rem;
 }
 
-.kubo__nombre {
+.grupo__titulo {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.grupo__total {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.registros {
+  display: grid;
+  gap: 0.5rem;
   margin: 0;
-  font-size: 1rem;
+  padding: 0;
+  list-style: none;
 }
 
-.kubo__importe {
-  margin: 0.25rem 0 0;
+.registro {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+}
+
+.registro__texto {
+  display: grid;
+}
+
+.registro__concepto {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.registro__fecha {
+  font-size: 0.8125rem;
+  color: var(--color-on-surface-variant);
+}
+
+.registro__importe {
+  font-size: 1.125rem;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Pantallas pendientes de hito
+   -------------------------------------------------------------------------- */
+
+.aviso {
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--color-on-surface-variant);
+  background: var(--color-surface-variant);
+  border-radius: var(--radius-card);
 }
