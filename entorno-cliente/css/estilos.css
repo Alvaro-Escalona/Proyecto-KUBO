@@ -54,7 +54,7 @@ html {
 body {
   max-inline-size: var(--ancho-app);
   min-block-size: 100dvh;
-  margin-inline: auto;
+  margin: 0 auto;
   font-family: var(--font-serif);
   font-size: 1rem;
   line-height: 1.5;
@@ -154,8 +154,8 @@ p {
 
 main {
   display: grid;
-  gap: 1.25rem;
-  padding: 1rem 1rem calc(var(--alto-nav) + 1.5rem);
+  gap: 0.625rem;
+  padding: 0.75rem 1rem calc(var(--alto-nav) + 0.5rem);
 }
 
 /* Cabecera de sección: título a la izquierda, acción a la derecha */
@@ -191,14 +191,15 @@ main {
 
 /* Tarjeta de saldo: semanal en Inicio, mensual en Kubos */
 .resumen {
-  padding: 1rem 1.75rem 0.625rem;
+  padding: 0.625rem 1.5rem 0.375rem;
+  text-align: center;
   color: var(--color-on-primary);
   background: var(--color-primary);
   border-radius: var(--radius-hero);
 }
 
 .resumen__titulo {
-  font-size: 1.6875rem;
+  font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: 0.01em;
@@ -207,7 +208,7 @@ main {
 
 .resumen__cantidad {
   margin-block-start: 0.25rem;
-  font-size: 7.375rem;
+  font-size: 5rem;
   font-weight: 800;
   line-height: 0.9;
   color: var(--color-secondary);
@@ -220,7 +221,7 @@ main {
   opacity: 0.85;
 }
 
-.resumen__semana {
+.resumen__ritmo {
   display: inline-block;
   margin-block-start: 0.375rem;
   padding: 0.25rem 0.75rem;
@@ -231,21 +232,37 @@ main {
   border-radius: var(--radius-pill);
 }
 
+.resumen__ritmo--malo {
+  color: #5a1a1a;
+  background: linear-gradient(90deg, #f2a7a7, #d9534f);
+}
+
 /* Caja de kubos con scroll interno (Inicio) */
 .kubos-scroll {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 0.75rem;
-  max-block-size: 15rem;
+  max-block-size: 18rem;
   padding-inline-end: 0.25rem;
+  overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
+}
+
+/* Listados de la página Kubos */
+#lista-kubos,
+#lista-fecha {
+  display: grid;
+  gap: 0.5rem;
 }
 
 /* Tarjeta de kubo */
 .kubo {
   display: grid;
-  gap: 0.625rem;
-  padding: 0.875rem 1rem 0.625rem;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem 0.5rem;
+  color: inherit;
+  text-decoration: none;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-card);
@@ -280,6 +297,8 @@ main {
   font-size: 0.875rem;
   line-height: 1.2;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: var(--color-on-surface-variant);
 }
 
@@ -307,7 +326,7 @@ main {
   white-space: nowrap;
 }
 
-/* Barra de progreso (gris, como en Figma) */
+/* Barra de progreso: pista gris y relleno dorado con lo gastado */
 .barra {
   block-size: 0.5rem;
   overflow: hidden;
@@ -318,7 +337,7 @@ main {
 .barra__relleno {
   display: block;
   block-size: 100%;
-  background: var(--color-track);
+  background: var(--color-secondary);
   border-radius: inherit;
 }
 
@@ -333,7 +352,7 @@ main {
   display: grid;
   align-content: start;
   gap: 0.25rem;
-  padding: 0.875rem 1rem;
+  padding: 0.375rem 0.75rem;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-card);
@@ -342,13 +361,14 @@ main {
 .ahorro__titulo {
   font-size: 0.9375rem;
   font-weight: 700;
+  line-height: 1.2;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
 .ahorro__importe {
-  margin-block-start: 0.25rem;
-  font-size: 2.375rem;
+  margin-block-start: 0;
+  font-size: 2rem;
   font-weight: 800;
   line-height: 1;
 }
@@ -358,8 +378,9 @@ main {
 }
 
 .ahorro__meta {
-  margin-block-start: 0.375rem;
+  margin-block-start: 0;
   font-size: 0.875rem;
+  line-height: 1.2;
   color: var(--color-on-surface-variant);
 }
 
@@ -369,8 +390,8 @@ main {
   align-items: center;
   justify-content: center;
   gap: 0.625rem;
-  padding: 1.125rem 1rem;
-  font-size: 2.0625rem;
+  padding: 0.875rem 1rem;
+  font-size: 1.75rem;
   font-weight: 700;
   text-align: center;
   text-decoration: none;
@@ -488,6 +509,11 @@ main {
   text-decoration: underline;
 }
 
+#detalle-kubo {
+  display: grid;
+  gap: 1rem;
+}
+
 .ficha {
   display: grid;
   gap: 0.75rem;
@@ -502,7 +528,7 @@ main {
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
-  margin-block: 1.25rem 0.75rem;
+  margin-block: 0.5rem 0;
 }
 
 .grupo__titulo {
@@ -519,7 +545,7 @@ main {
 
 .registros {
   display: grid;
-  gap: 0.5rem;
+  gap: 0.75rem;
   margin: 0;
   padding: 0;
   list-style: none;

@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;700;800&display=swap">
   <link rel="stylesheet" href="css/estilos.css">
-  <script type="module" src="js/main.js"></script>
 </head>
 <body>
   <svg class="sprite" aria-hidden="true" focusable="false">
@@ -73,7 +72,7 @@
       <h2 class="resumen__titulo" id="resumen-titulo">Te quedan esta semana</h2>
       <p class="resumen__cantidad" id="resumen-cantidad">92 €</p>
       <p class="resumen__detalle" id="resumen-detalle">del lunes 16 al domingo 22</p>
-      <p class="resumen__semana" id="resumen-semana">Semana 3/4</p>
+      <p class="resumen__ritmo" id="resumen-ritmo">Buen ritmo semanal</p>
     </section>
 
     <section aria-labelledby="kubos-titulo">
@@ -96,10 +95,6 @@
         <div class="ahorro">
           <p class="ahorro__titulo">Ahorro del mes</p>
           <p class="ahorro__importe" id="ahorro-mes">150 €</p>
-          <div class="barra" role="progressbar" aria-label="Ahorro del mes"
-               aria-valuemin="0" aria-valuemax="100" aria-valuenow="75">
-            <span class="barra__relleno" style="width: 75%"></span>
-          </div>
           <p class="ahorro__meta" id="ahorro-mes-meta">de 200 € · 75%</p>
         </div>
       </div>
@@ -161,5 +156,7 @@
       </li>
     </ul>
   </nav>
-</body>
+  <script src="js/datos.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script></body>
 </html>
