@@ -1,2 +1,10 @@
 # Capturas de referencia del diseño
 Diseño Kubo/
+
+# Dependencias de npm (eslint)
+entorno-cliente/node_modules/
+
+# Material personal (apuntes, enunciado, prompt de la IA) — no es parte de la entrega
+apuntes-entorno/
+atividad.md
+cliente.md
