@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto · KUBO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;700;800&display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-inicio-linea" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4.2 10.6 12 4.4l7.8 6.2v8.4a1.6 1.6 0 0 1-1.6 1.6H5.8a1.6 1.6 0 0 1-1.6-1.6z"/>
+      <path d="M9.8 20.6v-3.2a2.2 2.2 0 0 1 4.4 0v3.2"/>
+    </symbol>
+    <symbol id="i-inicio-lleno" viewBox="0 0 24 24">
+      <path fill="currentColor" stroke="none" fill-rule="evenodd" d="M4.2 10.6 12 4.4l7.8 6.2v8.4a1.6 1.6 0 0 1-1.6 1.6H5.8a1.6 1.6 0 0 1-1.6-1.6zM9.8 20.6v-3.2a2.2 2.2 0 0 1 4.4 0v3.2z"/>
+    </symbol>
+    <symbol id="i-kubos-linea" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <g transform="rotate(-28 11 12)">
+        <rect x="5" y="6.5" width="12" height="11.5" rx="3.2"/>
+        <path d="M5.8 13.4 11.6 7"/>
+      </g>
+      <circle cx="17.6" cy="16.8" r="2.8"/>
+    </symbol>
+    <symbol id="i-kubos-lleno" viewBox="0 0 24 24">
+      <g transform="rotate(-28 11 12)">
+        <rect x="5" y="6.5" width="12" height="11.5" rx="3.2" fill="currentColor" stroke="none"/>
+        <path d="M5.8 13.4 11.6 7" fill="none" stroke="var(--color-surface)" stroke-width="1.1"/>
+      </g>
+      <circle cx="17.6" cy="16.8" r="2.8" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-registro" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M12 5.5v13M5.5 12h13"/>
+    </symbol>
+    <symbol id="i-revision-linea" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+      <rect x="4" y="4" width="7" height="7" rx="1.6"/>
+      <rect x="13" y="4" width="7" height="7" rx="1.6"/>
+      <rect x="4" y="13" width="7" height="7" rx="1.6"/>
+      <rect x="13" y="13" width="7" height="7" rx="1.6"/>
+    </symbol>
+    <symbol id="i-revision-lleno" viewBox="0 0 24 24">
+      <rect x="4" y="4" width="7" height="7" rx="1.6" fill="currentColor" stroke="none"/>
+      <rect x="13" y="4" width="7" height="7" rx="1.6" fill="currentColor" stroke="none"/>
+      <rect x="4" y="13" width="7" height="7" rx="1.6" fill="currentColor" stroke="none"/>
+      <rect x="13" y="13" width="7" height="7" rx="1.6" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-mimes-linea" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12.1 3.6A8.5 8.5 0 1 0 18.4 6.1"/>
+      <path d="M12.8 11.4 18.4 6.1A8.5 8.5 0 0 0 12.1 3.6Z"/>
+    </symbol>
+    <symbol id="i-mimes-lleno" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8.5" fill="currentColor" stroke="none"/>
+      <path d="M12.8 11.4 18.4 6.1A8.5 8.5 0 0 0 12.1 3.6Z" fill="var(--color-surface)" stroke="none"/>
+    </symbol>
+  </svg>
+
+  <header class="cabecera">
+    <button class="perfil" type="button" aria-label="Abrir menú de perfil" title="Disponible en un próximo hito">
+      <img class="perfil__foto" src="img/perfil.svg" alt="" width="36" height="36">
+    </button>
+    <div class="cabecera__datos">
+      <span class="cabecera__titulo">Contacto</span>
+    </div>
+  </header>
+
+  <main>
+    <a class="volver" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="inline-size:1rem;block-size:1rem">
+        <path d="M15 5l-7 7 7 7"/>
+      </svg>
+      Volver
+    </a>
+
+    <section aria-labelledby="contacto-titulo">
+      <div class="seccion__cabecera">
+        <h2 class="seccion__titulo" id="contacto-titulo">Escríbenos</h2>
+        <p class="campo__ayuda">Respondemos en 48 h</p>
+      </div>
+
+      <p class="aviso" id="recordatorio" hidden>
+        Hola de nuevo, <strong id="recordatorio-nombre"></strong>. Te hemos rellenado el nombre y el correo.
+        <button class="accion" type="button" id="olvidar-recordatorio">Borrar mis datos</button>
+      </p>
+
+      <form class="formulario" id="form-contacto" novalidate>
+        <div class="campo">
+          <label class="campo__etiqueta" for="nombre">Nombre</label>
+          <input class="campo__control" id="nombre" name="nombre" type="text" autocomplete="name" aria-describedby="error-nombre">
+          <p class="campo__error" id="error-nombre" aria-live="polite"></p>
+        </div>
+
+        <div class="campo">
+          <label class="campo__etiqueta" for="email">Correo electrónico</label>
+          <input class="campo__control" id="email" name="email" type="email" autocomplete="email" aria-describedby="error-email">
+          <p class="campo__error" id="error-email" aria-live="polite"></p>
+        </div>
+
+        <div class="campo">
+          <label class="campo__etiqueta" for="telefono">Teléfono</label>
+          <input class="campo__control" id="telefono" name="telefono" type="tel" autocomplete="tel" aria-describedby="ayuda-telefono error-telefono">
+          <p class="campo__ayuda" id="ayuda-telefono">Opcional. 9 dígitos, por ejemplo 600 123 456.</p>
+          <p class="campo__error" id="error-telefono" aria-live="polite"></p>
+        </div>
+
+        <div class="campo">
+          <label class="eleccion" for="llamada">
+            <input class="eleccion__control" id="llamada" name="llamada" type="checkbox" aria-describedby="ayuda-telefono error-telefono">
+            <span>Prefiero que me llaméis.</span>
+          </label>
+        </div>
+
+        <div class="campo">
+          <label class="campo__etiqueta" for="motivo">Motivo</label>
+          <select class="campo__control" id="motivo" name="motivo" aria-describedby="error-motivo">
+            <option value="">Elige un motivo</option>
+            <option value="consulta">Consulta general</option>
+            <option value="kubo">Problema con un kubo</option>
+            <option value="sugerencia">Sugerencia</option>
+            <option value="otro">Otro</option>
+          </select>
+          <p class="campo__error" id="error-motivo" aria-live="polite"></p>
+        </div>
+
+        <div class="campo">
+          <label class="campo__etiqueta" for="mensaje">Mensaje</label>
+          <textarea class="campo__control campo__control--texto" id="mensaje" name="mensaje" rows="5" aria-describedby="ayuda-mensaje contador-mensaje error-mensaje"></textarea>
+          <p class="campo__ayuda" id="ayuda-mensaje">Cuéntanos qué necesitas. Mínimo 10 caracteres.</p>
+          <p class="contador" id="contador-mensaje">0 / 500</p>
+          <p class="campo__error" id="error-mensaje" aria-live="polite"></p>
+        </div>
+
+        <div class="acciones">
+          <button class="boton boton--formulario" type="submit" id="boton-enviar">Enviar mensaje</button>
+        </div>
+
+        <p class="aviso" id="estado-mensajes" role="status" aria-live="polite" hidden></p>
+      </form>
+    </section>
+
+    <section aria-labelledby="enviados-titulo">
+      <div class="seccion__cabecera">
+        <h2 class="seccion__titulo" id="enviados-titulo">Mensajes enviados</h2>
+        <p class="campo__ayuda" id="contador-mensajes">0 mensajes</p>
+      </div>
+      <ul class="lista-datos" id="lista-mensajes">
+        <!-- Los mensajes se generan en js/contacto.js a partir de localStorage -->
+      </ul>
+      <p class="aviso" id="sin-mensajes">Todavía no has enviado ningún mensaje.</p>
+    </section>
+  </main>
+
+  <nav class="barra-nav" aria-label="Navegación principal">
+    <ul class="barra-nav__lista">
+      <li>
+        <a class="barra-nav__enlace" href="index.html">
+          <svg class="barra-nav__icono" aria-hidden="true" focusable="false">
+            <use class="icono-linea" href="#i-inicio-linea"></use>
+            <use class="icono-lleno" href="#i-inicio-lleno"></use>
+          </svg>
+          <span>Inicio</span>
+        </a>
+      </li>
+      <li>
+        <a class="barra-nav__enlace" href="kubos.html">
+          <svg class="barra-nav__icono" aria-hidden="true" focusable="false">
+            <use class="icono-linea" href="#i-kubos-linea"></use>
+            <use class="icono-lleno" href="#i-kubos-lleno"></use>
+          </svg>
+          <span>Kubos</span>
+        </a>
+      </li>
+      <li>
+        <a class="barra-nav__enlace" href="registro.html">
+          <svg class="barra-nav__icono" aria-hidden="true" focusable="false">
+            <use href="#i-registro"></use>
+          </svg>
+          <span>Registro</span>
+        </a>
+      </li>
+      <li>
+        <a class="barra-nav__enlace" href="revision.html">
+          <svg class="barra-nav__icono" aria-hidden="true" focusable="false">
+            <use class="icono-linea" href="#i-revision-linea"></use>
+            <use class="icono-lleno" href="#i-revision-lleno"></use>
+          </svg>
+          <span>Revisión</span>
+        </a>
+      </li>
+      <li>
+        <a class="barra-nav__enlace" href="mi-mes.html">
+          <svg class="barra-nav__icono" aria-hidden="true" focusable="false">
+            <use class="icono-linea" href="#i-mimes-linea"></use>
+            <use class="icono-lleno" href="#i-mimes-lleno"></use>
+          </svg>
+          <span>Mi mes</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <script src="js/almacen.js"></script>
+  <script src="js/validacion.js"></script>
+  <script src="js/contacto.js"></script>
+</body>
+</html>
