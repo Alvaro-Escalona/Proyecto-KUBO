@@ -3,10 +3,3 @@ Diseño Kubo/
 
 # Dependencias de npm (eslint)
 entorno-cliente/node_modules/
-
-# Material personal (apuntes, enunciado, prompt de la IA) — no es parte de la entrega
-apuntes-entorno/
-atividad.md
-cliente.md
-h2prompt.md
-hito2.md
