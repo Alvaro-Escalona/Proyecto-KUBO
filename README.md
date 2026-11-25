@@ -34,20 +34,20 @@ Código de esta asignatura: https://github.com/Alvaro-Escalona/Proyecto-KUBO/tre
 
 Lista de funcionalidades de la aplicación:
 
-| # | Funcionalidad | Qué permite |
-|---|---|---|
-| 1 | Cuenta | Poder crear una cuenta y entrar con el login |
-| 2 | Preguntas iniciales | Explicar cómo funciona KUBO y preguntar los ingresos, los gastos fijos y el objetivo de ahorro para sacar el límite semanal |
-| 3 | Listado de kubos | Ver todos los kubos con su presupuesto, lo gastado y lo que queda, tanto en la portada como en la página de Kubos |
-| 4 | Alta de un gasto | Apuntar un gasto y elegir a qué kubo va |
-| 5 | Detalle del kubo | La ficha de un kubo con todos sus gastos |
-| 6 | Alta de un kubo | Crear un kubo nuevo con su presupuesto semanal |
-| 7 | Apartar dinero con fecha | Reservar un dinero para algo concreto  hasta una fecha, eligiendo de dónde sale |
-| 8 | Mi mes: editar los importes | Cambiar lo que gano al mes, el gasto fijo aproximado y el objetivo de ahorro |
-| 9 | Desglose de ingresos y gastos fijos | Apuntar cada ingreso y cada gasto fijo por separado (nómina, extras, alquiler, luz…) y que el total sea la suma de todo |
-| 10 | Editar un registro | Corregir el concepto, el importe o el kubo de un gasto que ya apunté |
-| 11 | Borrar un registro | Quitar un gasto que ya no toca |
-| 12 | Revisión | Comparar lo que pensaba gastar con lo que gasté de verdad, tanto en los kubos (me pasé o me sobró) como en los gastos fijos, y decidir qué hago con la diferencia |
+| # | Funcionalidad | Qué permite | Estado |
+|---|---|---|---|
+| 1 | Cuenta | Poder crear una cuenta y entrar con el login | **Hito 2**: crear cuenta (falta el login) |
+| 2 | Preguntas iniciales | Explicar cómo funciona KUBO y preguntar los ingresos, los gastos fijos y el objetivo de ahorro para sacar el límite semanal | Pendiente |
+| 3 | Listado de kubos | Ver todos los kubos con su presupuesto, lo gastado y lo que queda, tanto en la portada como en la página de Kubos | **Hito 1** |
+| 4 | Alta de un gasto | Apuntar un gasto y elegir a qué kubo va | Pendiente |
+| 5 | Detalle del kubo | La ficha de un kubo con todos sus gastos | **Hito 1** |
+| 6 | Alta de un kubo | Crear un kubo nuevo con su presupuesto semanal | Pendiente |
+| 7 | Apartar dinero con fecha | Reservar un dinero para algo concreto  hasta una fecha, eligiendo de dónde sale | Pendiente |
+| 8 | Mi mes: editar los importes | Cambiar lo que gano al mes, el gasto fijo aproximado y el objetivo de ahorro | Pendiente |
+| 9 | Desglose de ingresos y gastos fijos | Apuntar cada ingreso y cada gasto fijo por separado (nómina, extras, alquiler, luz…) y que el total sea la suma de todo | Pendiente |
+| 10 | Editar un registro | Corregir el concepto, el importe o el kubo de un gasto que ya apunté | Pendiente |
+| 11 | Borrar un registro | Quitar un gasto que ya no toca | Pendiente |
+| 12 | Revisión | Comparar lo que pensaba gastar con lo que gasté de verdad, tanto en los kubos (me pasé o me sobró) como en los gastos fijos, y decidir qué hago con la diferencia | Pendiente |
 
 ### Mapa de pantallas
 
@@ -62,4 +62,50 @@ Las pantallas que tiene la app y lo que sale en cada una:
 | **Revisión** | `revision.html` | Comparar lo que pensaba gastar con lo que gasté de verdad: me dice si me pasé o me sobró y de dónde quitar o meter la diferencia, y me da un consejo para el mes siguiente | Lo previsto y lo real de cada kubo y de los gastos fijos, la diferencia y las opciones para ajustarla |
 | **Mi mes** | `mi-mes.html` | Los datos del mes: lo que me entró, los gastos fijos, el objetivo de ahorro y el colchón; también el ritmo semanal (lo que me toca gastar cada semana) y los kubos con fecha | Ingresos, gastos fijos, objetivo de ahorro, colchón, ritmo semanal y los kubos con fecha |
 
-El menú está abajo del todo, es una barra fija con iconos y tiene Inicio, Kubos, Registro, Revisión y Mi mes. Sale en todas las páginas y la sección en la que estás se marca con `aria-current="page"`. En Kubos, en el detalle, en Revisión y en Mi mes el botón de Registro va dentro de un cuadrado amarillo que sobresale un poco por encima de la barra (en Inicio y en el propio Registro no sale).
+El menú está abajo del todo, es una barra fija con iconos y tiene Inicio, Kubos, Registro, Revisión y Mi mes. Sale en todas las páginas y la sección en la que estás se marca con `aria-current="page"`. En Kubos, en el detalle, en Revisión y en Mi mes el botón de Registro va dentro de un cuadrado amarillo que sobresale un poco por encima de la barra (en Inicio y en el propio Registro no sale). El avatar de la cabecera (arriba a la izquierda) lleva a la página de Registrarse, tu cuenta.
+
+## Hito 2
+
+Formularios con validación y persistencia en `localStorage` (sin `import`/`export` ni librerías, con variables globales y `<script src>` en orden).
+
+### Qué hay nuevo
+
+| Pantalla | Archivo | Qué hace |
+|---|---|---|
+| **Registrarse** | `registrarse.html` | Alta, edición y borrado de cuentas con su listado «Usuarios registrados». Se accede desde el avatar de la cabecera |
+| **Contacto** | `contacto.html` | Formulario de contacto con «Mensajes enviados» y recordatorio del último nombre y correo. Se accede desde Registrarse |
+
+| Fichero | Responsabilidad |
+|---|---|
+| `js/almacen.js` | CRUD genérico sobre `localStorage` (prefijo `kubo:`): `obtenerTodos`, `obtenerPorId`, `crear`, `actualizar`, `borrar` |
+| `js/validacion.js` | Funciones puras que devuelven un mensaje de error o `null` |
+| `js/usuarios.js` | Lógica del registro de cuentas (colección `kubo:usuarios`) |
+| `js/contacto.js` | Lógica del contacto (colección `kubo:mensajes` y recordatorio `kubo:ultimo-envio`) |
+
+### Mapa de validación
+
+| Campo | Función | Reglas |
+|---|---|---|
+| Nombre | `validarNombre` | Obligatorio · 2–40 caracteres · solo letras |
+| Nombre de usuario | `validarUsuario` | Obligatorio · 3–20 · letras/números/`.` `_` `-` · único |
+| Correo electrónico | `validarEmail` | Obligatorio · formato válido · único |
+| Fecha de nacimiento | `validarFechaNacimiento` | Obligatoria · no futura · mínimo 18 años |
+| Contraseña | `validarPassword` | Mínimo 8 · una mayúscula · un número |
+| Repetir contraseña | `validarRepetirPassword` | Igual que la contraseña |
+| Condiciones | `validarCondiciones` | Casilla marcada |
+| Teléfono | `validarTelefono` | Opcional · 9 dígitos o `+34` · obligatorio si pide «que me llaméis» |
+| Motivo | `validarMotivo` | Obligatorio |
+| Mensaje | `validarMensaje` | 10–500 caracteres |
+| — | `calcularEdad` | Edad que sale en el listado de cuentas |
+
+### Cómo se cumple el enunciado
+
+- Los formularios llevan `novalidate` y la validación se dispara en `blur` e `input`.
+- Cada campo con error usa `aria-invalid="true"` y un mensaje enlazado con `aria-describedby` (`aria-live="polite"`).
+- Al enviar, el foco salta al primer campo con error.
+- El borrado pide confirmación con `confirm()`.
+- Los botones de editar y borrar se resuelven por **delegación de eventos** (un solo `addEventListener` por lista), sin `onclick` en el HTML.
+- Conversión de tipos: el `id` se guarda como número y las casillas como booleano.
+- Todo persiste tras recargar la página (F5).
+- La contraseña no se guarda: solo se comprueba que sea segura.
+- El recordatorio de nombre y correo del último envío se guarda en `localStorage` (`kubo:ultimo-envio`), no en cookies.
