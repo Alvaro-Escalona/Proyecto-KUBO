@@ -20,6 +20,7 @@
   --color-on-surface-variant: light-dark(#5c5c5c, #b9c3e0);
   --color-track: light-dark(#b8b8b8, #33416e);
   --color-exito: light-dark(#3f9952, #7ed957);
+  --color-error: light-dark(#b3261e, #ffb4ab);
   --color-linea: light-dark(#1a1a1a, #ffffff);
 
   /* Tipografía (Figma: familia serif de interfaz) */
@@ -581,6 +582,146 @@ main {
   font-size: 1.125rem;
   font-weight: 400;
   white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Formularios (Hito 2)
+   -------------------------------------------------------------------------- */
+
+.formulario {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.campo {
+  display: grid;
+  gap: 0.375rem;
+}
+
+.campo__etiqueta {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-on-surface);
+}
+
+.campo__control {
+  inline-size: 100%;
+  padding: 0.75rem 1rem;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--color-on-surface);
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-card);
+}
+
+.campo__control:focus {
+  border-color: var(--color-secondary);
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 1px;
+}
+
+.campo__control[aria-invalid='true'] {
+  border-color: var(--color-error);
+}
+
+.campo__ayuda {
+  font-size: 0.8125rem;
+  color: var(--color-on-surface-variant);
+}
+
+.campo__error {
+  font-size: 0.8125rem;
+  color: var(--color-error);
+}
+
+/* El error solo se ve cuando tiene texto. */
+.campo__error:empty {
+  display: none;
+}
+
+.contador {
+  font-size: 0.8125rem;
+  color: var(--color-on-surface-variant);
+  text-align: end;
+}
+
+.eleccion {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  font-size: 0.9375rem;
+}
+
+.eleccion__control {
+  flex: none;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  margin-block-start: 0.125rem;
+  accent-color: var(--color-primary);
+}
+
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.boton--secundario {
+  font-size: 1rem;
+  color: var(--color-primary);
+  background: var(--color-surface);
+  border: 2px solid var(--color-primary);
+}
+
+.boton--peligro {
+  font-size: 1rem;
+  color: var(--color-on-primary);
+  background: var(--color-error);
+}
+
+/* --------------------------------------------------------------------------
+   Listados de datos (usuarios y mensajes)
+   -------------------------------------------------------------------------- */
+
+.lista-datos {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tarjeta-dato {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+}
+
+.tarjeta-dato__cabecera {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.tarjeta-dato__titulo {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.tarjeta-dato__fecha {
+  font-size: 0.8125rem;
+  color: var(--color-on-surface-variant);
+  white-space: nowrap;
+}
+
+.tarjeta-dato__texto {
+  font-size: 0.9375rem;
+  color: var(--color-on-surface-variant);
 }
 
 /* --------------------------------------------------------------------------
