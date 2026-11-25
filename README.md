@@ -84,19 +84,18 @@ Formularios con validación y persistencia en `localStorage` (sin `import`/`expo
 
 ### Mapa de validación
 
-| Campo | Función | Reglas |
+| Campo | Regla | Mensaje de error |
 |---|---|---|
-| Nombre | `validarNombre` | Obligatorio · 2–40 caracteres · solo letras |
-| Nombre de usuario | `validarUsuario` | Obligatorio · 3–20 · letras/números/`.` `_` `-` · único |
-| Correo electrónico | `validarEmail` | Obligatorio · formato válido · único |
-| Fecha de nacimiento | `validarFechaNacimiento` | Obligatoria · no futura · mínimo 18 años |
-| Contraseña | `validarPassword` | Mínimo 8 · una mayúscula · un número |
-| Repetir contraseña | `validarRepetirPassword` | Igual que la contraseña |
-| Condiciones | `validarCondiciones` | Casilla marcada |
-| Teléfono | `validarTelefono` | Opcional · 9 dígitos o `+34` · obligatorio si pide «que me llaméis» |
-| Motivo | `validarMotivo` | Obligatorio |
-| Mensaje | `validarMensaje` | 10–500 caracteres |
-| — | `calcularEdad` | Edad que sale en el listado de cuentas |
+| Nombre | Obligatorio · 2–40 caracteres · solo letras | «Escribe tu nombre.» · «El nombre debe tener al menos 2 caracteres.» · «El nombre no puede pasar de 40 caracteres.» · «El nombre solo puede tener letras.» |
+| Nombre de usuario | Obligatorio · 3–20 · letras/números/`.` `_` `-` · único | «Elige un nombre de usuario.» · «El usuario debe tener al menos 3 caracteres.» · «El usuario no puede pasar de 20 caracteres.» · «El usuario solo puede tener letras, números, punto, guion o guion bajo.» · «Ese nombre de usuario ya está cogido.» |
+| Correo electrónico | Obligatorio · formato válido · único | «Escribe tu correo.» · «Escribe un correo válido, por ejemplo nombre@correo.com.» · «Ya hay una cuenta con ese correo.» |
+| Fecha de nacimiento | Obligatoria · no futura · mínimo 18 años | «Escribe tu fecha de nacimiento.» · «La fecha no es válida.» · «La fecha de nacimiento no puede ser futura.» · «Tienes que tener al menos 18 años para usar KUBO.» |
+| Contraseña | Mínimo 8 · una mayúscula · un número | «Escribe una contraseña.» · «La contraseña debe tener al menos 8 caracteres.» · «La contraseña debe tener al menos una mayúscula.» · «La contraseña debe tener al menos un número.» |
+| Repetir contraseña | Igual que la contraseña | «Repite la contraseña.» · «Las contraseñas no coinciden.» |
+| Condiciones | Casilla marcada | «Tienes que aceptar las condiciones para continuar.» |
+| Teléfono | Opcional · 9 dígitos o `+34` · obligatorio si pide «que me llaméis» | «Escribe tu teléfono para que podamos llamarte.» · «Escribe un teléfono válido de 9 dígitos (o con +34 delante).» |
+| Motivo | Obligatorio | «Elige un motivo.» |
+| Mensaje | 10–500 caracteres | «Escribe tu mensaje.» · «El mensaje debe tener al menos 10 caracteres.» · «El mensaje no puede pasar de 500 caracteres.» |
 
 ### Cómo se cumple el enunciado
 
@@ -105,7 +104,26 @@ Formularios con validación y persistencia en `localStorage` (sin `import`/`expo
 - Al enviar, el foco salta al primer campo con error.
 - El borrado pide confirmación con `confirm()`.
 - Los botones de editar y borrar se resuelven por **delegación de eventos** (un solo `addEventListener` por lista), sin `onclick` en el HTML.
-- Conversión de tipos: el `id` se guarda como número y las casillas como booleano.
+- Conversión de tipos: el `id` se guarda como número, las casillas como booleano y la fecha de nacimiento en ISO (`AAAA-MM-DD`).
+- El HTML lleva `required`, `minlength` y `maxlength`; el JS lee `campo.minLength`/`campo.maxLength` en vez de repetir los números a mano.
 - Todo persiste tras recargar la página (F5).
 - La contraseña no se guarda: solo se comprueba que sea segura.
-- El recordatorio de nombre y correo del último envío se guarda en `localStorage` (`kubo:ultimo-envio`), no en cookies.
+- El recordatorio de nombre y correo del último envío se guarda en `localStorage` (`kubo:ultimo-envio`): al volver a abrir el formulario se rellenan solos, como cuando una web te recuerda tu correo.
+
+### Qué se ha hecho
+
+- La capa de datos (`almacen.js`) con el CRUD sobre `localStorage`.
+- Las funciones de validación (`validacion.js`).
+- El formulario de registro con alta, edición y borrado de cuentas, y la vista «Usuarios».
+- El formulario de contacto con validación cruzada del teléfono, contador de caracteres, la vista «Mensajes enviados» y el recordatorio en `localStorage`.
+
+### Qué falta
+
+- El **login**: la cuenta se crea, pero todavía no hay forma de «entrar» con ella (no se guarda contraseña, así que no hay con qué comparar). Queda para un hito posterior.
+- El resto del backlog: alta de gasto, alta/edición/borrado de kubos, «Mi mes», desglose de ingresos/gastos fijos y la Revisión.
+
+### Qué ha costado más
+
+- La **validación entre campos** (que marcar «prefiero que me llaméis» convierta el teléfono en obligatorio).
+- Reutilizar el **mismo formulario para crear y editar**: manejar el estado «estoy editando» sin que se dispare la comprobación de «usuario/correo ya existe» contra uno mismo.
+- Leer las reglas (`minlength`/`maxlength`) desde el HTML en vez de repetirlas en el JavaScript.

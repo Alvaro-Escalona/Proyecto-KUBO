@@ -50,11 +50,11 @@ function motivoErrorUsuario(campo) {
     const editando = usuarioEnEdicion !== null;
 
     if (campo.id === 'nombre') {
-        return validarNombre(valor, 2, 40);
+        return validarNombre(valor, campo.minLength, campo.maxLength);
     }
 
     if (campo.id === 'usuario') {
-        const error = validarUsuario(valor, 3, 20);
+        const error = validarUsuario(valor, campo.minLength, campo.maxLength);
         if (error) {
             return error;
         }
@@ -82,7 +82,7 @@ function motivoErrorUsuario(campo) {
             return null;
         }
         if (campo.id === 'password') {
-            return validarPassword(password, 8);
+            return validarPassword(password, campo.minLength);
         }
         return validarRepetirPassword(repetir, password);
     }

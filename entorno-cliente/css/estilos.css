@@ -652,11 +652,6 @@ main {
   text-align: end;
 }
 
-.contador--excedido {
-  font-weight: 700;
-  color: var(--color-error);
-}
-
 .campo__control--texto {
   min-block-size: 7rem;
   resize: vertical;

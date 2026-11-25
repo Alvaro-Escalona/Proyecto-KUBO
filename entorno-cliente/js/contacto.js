@@ -3,12 +3,8 @@
 // colección de localStorage donde viven los mensajes
 const COLECCION_MENSAJES = 'mensajes';
 
-// recuerdo del último envío: nombre y correo, como hacen muchas webs
+// clave de localStorage donde se guarda el último envío (el "recuérdame")
 const CLAVE_RECORDATORIO = 'kubo:ultimo-envio';
-
-// límites del mensaje
-const MENSAJE_MINIMO = 10;
-const MENSAJE_MAXIMO = 500;
 
 // campos del formulario que se validan
 const CAMPOS_CONTACTO = ['nombre', 'email', 'telefono', 'motivo', 'mensaje'];
@@ -40,7 +36,7 @@ function motivoErrorContacto(campo) {
     const valor = campo.value;
 
     if (campo.id === 'nombre') {
-        return validarNombre(valor, 2, 40);
+        return validarNombre(valor, campo.minLength, campo.maxLength);
     }
 
     if (campo.id === 'email') {
@@ -57,7 +53,7 @@ function motivoErrorContacto(campo) {
     }
 
     if (campo.id === 'mensaje') {
-        return validarMensaje(valor, MENSAJE_MINIMO, MENSAJE_MAXIMO);
+        return validarMensaje(valor, campo.minLength, campo.maxLength);
     }
 
     return null;
@@ -106,19 +102,21 @@ function anunciarContacto(mensaje) {
     aviso.hidden = false;
 }
 
-// contador de caracteres del mensaje
+// contador de caracteres del mensaje (lee el máximo del maxlength del HTML)
 function actualizarContadorMensaje() {
-    const texto = campoContacto('mensaje').value;
+    const campo = campoContacto('mensaje');
     const contador = document.querySelector('#contador-mensaje');
 
-    contador.textContent = `${texto.length} / ${MENSAJE_MAXIMO}`;
-
-    if (texto.length > MENSAJE_MAXIMO) {
-        contador.classList.add('contador--excedido');
-    } else {
-        contador.classList.remove('contador--excedido');
-    }
+    contador.textContent = `${campo.value.length} / ${campo.maxLength}`;
 }
+
+// ----------------------------------------------------------------
+// RECUÉRDAME (el "último envío" del enunciado, hecho con localStorage)
+// Guardamos el nombre y el correo del último envío para que, al
+// volver a abrir el formulario, se rellenen solos (como cuando una
+// web te recuerda tu correo). localStorage solo guarda texto, por
+// eso convertimos con JSON.stringify / JSON.parse.
+// ----------------------------------------------------------------
 
 // leer el recuerdo del último envío
 function leerRecordatorio() {
@@ -147,6 +145,7 @@ function recordarUltimoEnvio() {
         return;
     }
 
+    // solo rellenamos si el campo está vacío (no pisamos lo que escriba)
     if (campoContacto('nombre').value === '' && ultimo.nombre) {
         campoContacto('nombre').value = ultimo.nombre;
     }
@@ -300,7 +299,9 @@ function enviarFormularioContacto(evento) {
     crear(COLECCION_MENSAJES, datos);
     guardarRecordatorio(datos.nombre, datos.email);
 
-    // dejamos el nombre y el correo, que es lo que recuerda la web
+    // vaciamos el formulario entero (la próxima vez lo rellena el localStorage)
+    campoContacto('nombre').value = '';
+    campoContacto('email').value = '';
     campoContacto('telefono').value = '';
     campoContacto('llamada').checked = false;
     campoContacto('motivo').value = '';

@@ -83,46 +83,46 @@
       <form class="formulario" id="form-usuario" novalidate>
         <div class="campo">
           <label class="campo__etiqueta" for="nombre">Nombre</label>
-          <input class="campo__control" id="nombre" name="nombre" type="text" autocomplete="given-name" aria-describedby="error-nombre">
+          <input class="campo__control" id="nombre" name="nombre" type="text" required minlength="2" maxlength="40" autocomplete="given-name" aria-describedby="error-nombre">
           <p class="campo__error" id="error-nombre" aria-live="polite"></p>
         </div>
 
         <div class="campo">
           <label class="campo__etiqueta" for="usuario">Nombre de usuario</label>
-          <input class="campo__control" id="usuario" name="usuario" type="text" autocomplete="username" aria-describedby="ayuda-usuario error-usuario">
+          <input class="campo__control" id="usuario" name="usuario" type="text" required minlength="3" maxlength="20" autocomplete="username" aria-describedby="ayuda-usuario error-usuario">
           <p class="campo__ayuda" id="ayuda-usuario">Letras, números, punto, guion o guion bajo. De 3 a 20 caracteres.</p>
           <p class="campo__error" id="error-usuario" aria-live="polite"></p>
         </div>
 
         <div class="campo">
           <label class="campo__etiqueta" for="email">Correo electrónico</label>
-          <input class="campo__control" id="email" name="email" type="email" autocomplete="email" aria-describedby="error-email">
+          <input class="campo__control" id="email" name="email" type="email" required autocomplete="email" aria-describedby="error-email">
           <p class="campo__error" id="error-email" aria-live="polite"></p>
         </div>
 
         <div class="campo">
           <label class="campo__etiqueta" for="nacimiento">Fecha de nacimiento</label>
-          <input class="campo__control" id="nacimiento" name="nacimiento" type="date" autocomplete="bday" aria-describedby="ayuda-nacimiento error-nacimiento">
+          <input class="campo__control" id="nacimiento" name="nacimiento" type="date" required autocomplete="bday" aria-describedby="ayuda-nacimiento error-nacimiento">
           <p class="campo__ayuda" id="ayuda-nacimiento">Tienes que tener al menos 18 años.</p>
           <p class="campo__error" id="error-nacimiento" aria-live="polite"></p>
         </div>
 
         <div class="campo">
           <label class="campo__etiqueta" for="password">Contraseña</label>
-          <input class="campo__control" id="password" name="password" type="password" autocomplete="new-password" aria-describedby="ayuda-password error-password">
+          <input class="campo__control" id="password" name="password" type="password" required minlength="8" autocomplete="new-password" aria-describedby="ayuda-password error-password">
           <p class="campo__ayuda" id="ayuda-password">Mínimo 8 caracteres, una mayúscula y un número. No guardamos la contraseña.</p>
           <p class="campo__error" id="error-password" aria-live="polite"></p>
         </div>
 
         <div class="campo">
           <label class="campo__etiqueta" for="repetir">Repetir contraseña</label>
-          <input class="campo__control" id="repetir" name="repetir" type="password" autocomplete="new-password" aria-describedby="error-repetir">
+          <input class="campo__control" id="repetir" name="repetir" type="password" required autocomplete="new-password" aria-describedby="error-repetir">
           <p class="campo__error" id="error-repetir" aria-live="polite"></p>
         </div>
 
         <div class="campo">
           <label class="eleccion" for="condiciones">
-            <input class="eleccion__control" id="condiciones" name="condiciones" type="checkbox" aria-describedby="error-condiciones">
+            <input class="eleccion__control" id="condiciones" name="condiciones" type="checkbox" required aria-describedby="error-condiciones">
             <span>Acepto las condiciones de uso y la política de privacidad.</span>
           </label>
           <p class="campo__error" id="error-condiciones" aria-live="polite"></p>
