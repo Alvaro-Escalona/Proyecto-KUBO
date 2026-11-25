@@ -106,6 +106,7 @@ p {
 }
 
 .perfil {
+  display: block;
   flex: none;
   inline-size: 2.25rem;
   block-size: 2.25rem;
