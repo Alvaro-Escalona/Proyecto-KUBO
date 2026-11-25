@@ -48,6 +48,11 @@
   box-sizing: border-box;
 }
 
+/* El atributo hidden manda aunque el elemento tenga display propio. */
+[hidden] {
+  display: none !important;
+}
+
 html {
   background: light-dark(#e8e8ea, #04070f);
 }
@@ -672,6 +677,11 @@ main {
   color: var(--color-primary);
   background: var(--color-surface);
   border: 2px solid var(--color-primary);
+}
+
+.boton--formulario {
+  padding-block: 0.75rem;
+  font-size: 1.125rem;
 }
 
 .boton--peligro {

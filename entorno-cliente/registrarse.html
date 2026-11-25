@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registrarse · KUBO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;700;800&display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-inicio-linea" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4.2 10.6 12 4.4l7.8 6.2v8.4a1.6 1.6 0 0 1-1.6 1.6H5.8a1.6 1.6 0 0 1-1.6-1.6z"/>
+      <path d="M9.8 20.6v-3.2a2.2 2.2 0 0 1 4.4 0v3.2"/>
+    </symbol>
+    <symbol id="i-inicio-lleno" viewBox="0 0 24 24">
+      <path fill="currentColor" stroke="none" fill-rule="evenodd" d="M4.2 10.6 12 4.4l7.8 6.2v8.4a1.6 1.6 0 0 1-1.6 1.6H5.8a1.6 1.6 0 0 1-1.6-1.6zM9.8 20.6v-3.2a2.2 2.2 0 0 1 4.4 0v3.2z"/>
+    </symbol>
+    <symbol id="i-kubos-linea" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <g transform="rotate(-28 11 12)">
+        <rect x="5" y="6.5" width="12" height="11.5" rx="3.2"/>
+        <path d="M5.8 13.4 11.6 7"/>
+      </g>
+      <circle cx="17.6" cy="16.8" r="2.8"/>
+    </symbol>
+    <symbol id="i-kubos-lleno" viewBox="0 0 24 24">
+      <g transform="rotate(-28 11 12)">
+        <rect x="5" y="6.5" width="12" height="11.5" rx="3.2" fill="currentColor" stroke="none"/>
+        <path d="M5.8 13.4 11.6 7" fill="none" stroke="var(--color-surface)" stroke-width="1.1"/>
+      </g>
+      <circle cx="17.6" cy="16.8" r="2.8" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-registro" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M12 5.5v13M5.5 12h13"/>
+    </symbol>
+    <symbol id="i-revision-linea" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+      <rect x="4" y="4" width="7" height="7" rx="1.6"/>
+      <rect x="13" y="4" width="7" height="7" rx="1.6"/>
+      <rect x="4" y="13" width="7" height="7" rx="1.6"/>
+      <rect x="13" y="13" width="7" height="7" rx="1.6"/>
+    </symbol>
+    <symbol id="i-revision-lleno" viewBox="0 0 24 24">
+      <rect x="4" y="4" width="7" height="7" rx="1.6" fill="currentColor" stroke="none"/>
+      <rect x="13" y="4" width="7" height="7" rx="1.6" fill="currentColor" stroke="none"/>
+      <rect x="4" y="13" width="7" height="7" rx="1.6" fill="currentColor" stroke="none"/>
+      <rect x="13" y="13" width="7" height="7" rx="1.6" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-mimes-linea" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12.1 3.6A8.5 8.5 0 1 0 18.4 6.1"/>
+      <path d="M12.8 11.4 18.4 6.1A8.5 8.5 0 0 0 12.1 3.6Z"/>
+    </symbol>
+    <symbol id="i-mimes-lleno" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8.5" fill="currentColor" stroke="none"/>
+      <path d="M12.8 11.4 18.4 6.1A8.5 8.5 0 0 0 12.1 3.6Z" fill="var(--color-surface)" stroke="none"/>
+    </symbol>
+  </svg>
+
+  <header class="cabecera">
+    <button class="perfil" type="button" aria-label="Abrir menú de perfil" title="Disponible en un próximo hito">
+      <img class="perfil__foto" src="img/perfil.svg" alt="" width="36" height="36">
+    </button>
+    <div class="cabecera__datos">
+      <span class="cabecera__titulo">Registrarse</span>
+    </div>
+  </header>
+
+  <main>
+    <a class="volver" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="inline-size:1rem;block-size:1rem">
+        <path d="M15 5l-7 7 7 7"/>
+      </svg>
+      Volver
+    </a>
+
+    <section aria-labelledby="cuenta-titulo">
+      <div class="seccion__cabecera">
+        <h2 class="seccion__titulo" id="cuenta-titulo">Crear cuenta</h2>
+        <p class="campo__ayuda" id="modo-formulario">Nueva cuenta</p>
+      </div>
+
+      <form class="formulario" id="form-usuario" novalidate>
+        <div class="campo">
+          <label class="campo__etiqueta" for="nombre">Nombre</label>
+          <input class="campo__control" id="nombre" name="nombre" type="text" autocomplete="given-name" aria-describedby="error-nombre">
+          <p class="campo__error" id="error-nombre" aria-live="polite"></p>
+        </div>
+
+        <div class="campo">
+          <label class="campo__etiqueta" for="usuario">Nombre de usuario</label>
+          <input class="campo__control" id="usuario" name="usuario" type="text" autocomplete="username" aria-describedby="ayuda-usuario error-usuario">
+          <p class="campo__ayuda" id="ayuda-usuario">Letras, números, punto, guion o guion bajo. De 3 a 20 caracteres.</p>
+          <p class="campo__error" id="error-usuario" aria-live="polite"></p>
+        </div>
+
+        <div class="campo">
+          <label class="campo__etiqueta" for="email">Correo electrónico</label>
+          <input class="campo__control" id="email" name="email" type="email" autocomplete="email" aria-describedby="error-email">
+          <p class="campo__error" id="error-email" aria-live="polite"></p>
+        </div>
+
+        <div class="campo">
+          <label class="campo__etiqueta" for="nacimiento">Fecha de nacimiento</label>
+          <input class="campo__control" id="nacimiento" name="nacimiento" type="date" autocomplete="bday" aria-describedby="ayuda-nacimiento error-nacimiento">
+          <p class="campo__ayuda" id="ayuda-nacimiento">Tienes que tener al menos 18 años.</p>
+          <p class="campo__error" id="error-nacimiento" aria-live="polite"></p>
+        </div>
+
+        <div class="campo">
+          <label class="campo__etiqueta" for="password">Contraseña</label>
+          <input class="campo__control" id="password" name="password" type="password" autocomplete="new-password" aria-describedby="ayuda-password error-password">
+          <p class="campo__ayuda" id="ayuda-password">Mínimo 8 caracteres, una mayúscula y un número. No guardamos la contraseña.</p>
+          <p class="campo__error" id="error-password" aria-live="polite"></p>
+        </div>
+
+        <div class="campo">
+          <label class="campo__etiqueta" for="repetir">Repetir contraseña</label>
+          <input class="campo__control" id="repetir" name="repetir" type="password" autocomplete="new-password" aria-describedby="error-repetir">
+          <p class="campo__error" id="error-repetir" aria-live="polite"></p>
+        </div>
+
+        <div class="campo">
+          <label class="eleccion" for="condiciones">
+            <input class="eleccion__control" id="condiciones" name="condiciones" type="checkbox" aria-describedby="error-condiciones">
+            <span>Acepto las condiciones de uso y la política de privacidad.</span>
+          </label>
+          <p class="campo__error" id="error-condiciones" aria-live="polite"></p>
+        </div>
+
+        <div class="campo">
+          <label class="eleccion" for="notificaciones">
+            <input class="eleccion__control" id="notificaciones" name="notificaciones" type="checkbox">
+            <span>Quiero recibir avisos de KUBO.</span>
+          </label>
+        </div>
+
+        <div class="acciones">
+          <button class="boton boton--formulario" type="submit" id="boton-guardar">Crear cuenta</button>
+          <button class="boton boton--secundario boton--formulario" type="button" id="boton-cancelar" hidden>Cancelar</button>
+        </div>
+
+        <p class="aviso" id="estado-usuarios" role="status" aria-live="polite" hidden></p>
+      </form>
+    </section>
+
+    <section aria-labelledby="usuarios-titulo">
+      <div class="seccion__cabecera">
+        <h2 class="seccion__titulo" id="usuarios-titulo">Usuarios registrados</h2>
+        <p class="campo__ayuda" id="contador-usuarios">0 cuentas</p>
+      </div>
+      <ul class="lista-datos" id="lista-usuarios">
+        <!-- Las cuentas se generan en js/usuarios.js a partir de localStorage -->
+      </ul>
+      <p class="aviso" id="sin-usuarios">Todavía no hay usuarios registrados.</p>
+    </section>
+  </main>
+
+  <nav class="barra-nav" aria-label="Navegación principal">
+    <ul class="barra-nav__lista">
+      <li>
+        <a class="barra-nav__enlace" href="index.html">
+          <svg class="barra-nav__icono" aria-hidden="true" focusable="false">
+            <use class="icono-linea" href="#i-inicio-linea"></use>
+            <use class="icono-lleno" href="#i-inicio-lleno"></use>
+          </svg>
+          <span>Inicio</span>
+        </a>
+      </li>
+      <li>
+        <a class="barra-nav__enlace" href="kubos.html">
+          <svg class="barra-nav__icono" aria-hidden="true" focusable="false">
+            <use class="icono-linea" href="#i-kubos-linea"></use>
+            <use class="icono-lleno" href="#i-kubos-lleno"></use>
+          </svg>
+          <span>Kubos</span>
+        </a>
+      </li>
+      <li>
+        <a class="barra-nav__enlace" href="registro.html">
+          <svg class="barra-nav__icono" aria-hidden="true" focusable="false">
+            <use href="#i-registro"></use>
+          </svg>
+          <span>Registro</span>
+        </a>
+      </li>
+      <li>
+        <a class="barra-nav__enlace" href="revision.html">
+          <svg class="barra-nav__icono" aria-hidden="true" focusable="false">
+            <use class="icono-linea" href="#i-revision-linea"></use>
+            <use class="icono-lleno" href="#i-revision-lleno"></use>
+          </svg>
+          <span>Revisión</span>
+        </a>
+      </li>
+      <li>
+        <a class="barra-nav__enlace" href="mi-mes.html">
+          <svg class="barra-nav__icono" aria-hidden="true" focusable="false">
+            <use class="icono-linea" href="#i-mimes-linea"></use>
+            <use class="icono-lleno" href="#i-mimes-lleno"></use>
+          </svg>
+          <span>Mi mes</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <script src="js/almacen.js"></script>
+  <script src="js/validacion.js"></script>
+  <script src="js/usuarios.js"></script>
+</body>
+</html>
